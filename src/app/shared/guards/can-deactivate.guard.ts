@@ -7,4 +7,8 @@ export const canDeactivateGuard: CanDeactivateFn<AccountComponent> = (
   currentState,
   nextState
 ) => {
+  console.log("currentRoute",currentRoute)
+  console.log("currentState", currentState)
+  console.log("nextState" ,nextState)
+
   return component.exit();};
