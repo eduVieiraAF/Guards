@@ -18,6 +18,11 @@ const routes: Routes = [
     canDeactivate: [canDeactivateGuard]
   },
   {
+    path: 'core',
+    loadChildren: () => import('./core/core.module').then(m => m.CoreModule)
+  }
+  ,
+  {
     path: '**',
     pathMatch: 'full',
     component: ErrorPageComponent
