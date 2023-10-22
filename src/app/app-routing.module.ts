@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { HomeComponent } from './shared/home/home.component';
-import { AccountComponent } from './shared/account/account.component';
-import { ErrorPageComponent } from './shared/error-page/error-page.component';
+import { HomeComponent } from './shared/pages/home/home.component';
+import { AccountComponent } from './shared/pages/account/account.component';
+import { ErrorPageComponent } from './shared/pages/error-page/error-page.component';
 import { canactivateGuard } from './shared/guards/canactivate.guard';
 import { canDeactivateGuard } from './shared/guards/can-deactivate.guard';
 
