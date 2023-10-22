@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './shared/home/home.component';
 import { AccountComponent } from './shared/account/account.component';
 import { ErrorPageComponent } from './shared/error-page/error-page.component';
+import { canactivateGuard } from './shared/guards/canactivate.guard';
 
 const routes: Routes = [
   {
@@ -11,7 +12,8 @@ const routes: Routes = [
   },
   {
     path: 'account',
-    component: AccountComponent
+    component: AccountComponent,
+    canActivate: [canactivateGuard]
   },
   {
     path: '**',
