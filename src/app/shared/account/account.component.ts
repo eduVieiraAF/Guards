@@ -7,4 +7,8 @@ import { Component } from '@angular/core';
 })
 export class AccountComponent {
 
+  public exit(): boolean {
+    if (confirm("Are you sure you want to exit?")) return true
+    else return false
+  }
 }
