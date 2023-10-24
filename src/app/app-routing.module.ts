@@ -6,6 +6,7 @@ import { ErrorPageComponent } from './shared/pages/error-page/error-page.compone
 import { canactivateGuard } from './shared/guards/canactivate.guard';
 import { canDeactivateGuard } from './shared/guards/can-deactivate.guard';
 import { canLoadGuard } from './shared/guards/can-load.guard';
+import { canActivateChildGuard } from './shared/guards/can-activate-child.guard';
 
 const routes: Routes = [
   {
@@ -21,7 +22,8 @@ const routes: Routes = [
   {
     path: 'core',
     loadChildren: () => import('./core/core.module').then((m)=> m.CoreModule),
-    canMatch: [canLoadGuard]
+    canMatch: [canLoadGuard],
+    canActivateChild: [canActivateChildGuard]
   },
   {
     path: '**',
