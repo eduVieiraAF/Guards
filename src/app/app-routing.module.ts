@@ -5,6 +5,7 @@ import { AccountComponent } from './shared/pages/account/account.component';
 import { ErrorPageComponent } from './shared/pages/error-page/error-page.component';
 import { canactivateGuard } from './shared/guards/canactivate.guard';
 import { canDeactivateGuard } from './shared/guards/can-deactivate.guard';
+import { canLoadGuard } from './shared/guards/can-load.guard';
 
 const routes: Routes = [
   {
@@ -19,9 +20,9 @@ const routes: Routes = [
   },
   {
     path: 'core',
-    loadChildren: () => import('./core/core.module').then(m => m.CoreModule)
-  }
-  ,
+    loadChildren: () => import('./core/core.module').then((m)=> m.CoreModule),
+    canMatch: [canLoadGuard]
+  },
   {
     path: '**',
     pathMatch: 'full',

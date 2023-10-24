@@ -10,7 +10,7 @@ const routes: Routes = [
   },
   {
     path: 'leads',
-    component: LeadsComponent
+    component: LeadsComponent,
   }
 ];
 
